@@ -3,9 +3,12 @@
 namespace App\Repositories\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class DiskMember extends Model
 {
+    use SoftDeletes;
+
     protected $connection = 'mysql';
     protected $table = 'disk_member';
     protected $fillable = [
