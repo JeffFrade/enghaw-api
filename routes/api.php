@@ -15,6 +15,10 @@ use Illuminate\Http\Request;
 
 Auth::routes(['register' => false]);
 
+Route::group(['prefix' => 'user'], function () {
+    Route::post('/store', 'UserController@store')->name('user.store');
+});
+
 Route::group(['middleware' => 'auth:api'], function () {
 
 });
